@@ -1,8 +1,20 @@
+import Link from 'next/link';
+
 export default function NewsPage() {
   return (
-    <div>
+    <>
       <h1>News</h1>
-      <p>This is the news page.</p>
-    </div>
+      <ul>
+        <li>
+          <Link href="/news/first-news">First News</Link>
+        </li>
+        <li>
+          <Link href="/news/second-news">Second News</Link>
+        </li>
+        <li>
+          <Link href="/news/third-news">Third News</Link>
+        </li>
+      </ul>
+    </>
   );
 }
