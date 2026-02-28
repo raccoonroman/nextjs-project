@@ -39,6 +39,11 @@ ul {
   border-radius: 4px;
 }
 
+.fullscreen-image img {
+  width: 100%;
+  height: auto;
+}
+
 #main-header #logo a,
 #main-header #logo a:hover {
   color: #e1e1d7;
