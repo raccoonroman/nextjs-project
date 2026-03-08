@@ -63,3 +63,15 @@ export const signin = async (prevState, formData) => {
   await createAuthSession(exisitingUser.id);
   redirect('/training');
 };
+
+export const auth = (mode, prevState, formData) => {
+  if (mode === 'login') {
+    return signin(prevState, formData);
+  }
+  return signup(prevState, formData);
+};
+
+export const logout = async () => {
+  await destroySession();
+  redirect('/');
+};
