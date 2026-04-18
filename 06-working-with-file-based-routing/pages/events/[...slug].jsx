@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { getFilteredEvents } from '../../data/dummy-data';
 import { EventList } from '../../components/events/event-list';
@@ -30,6 +31,10 @@ const FilteredEventsPage = ({ events, date, hasError }) => {
 
   return (
     <>
+      <Head>
+        <title>Filtered events</title>
+        <meta name="description" content={`All events for ${date.month}/${date.year}`} />
+      </Head>
       <ResultsTitle date={new Date(date.year, date.month - 1)} />
       <EventList events={events} />
     </>
