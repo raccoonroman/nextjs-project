@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import classes from './event-item.module.css';
 import { Button } from '../ui/button';
 import { DateIcon } from '../icons/date-icon';
@@ -14,7 +15,7 @@ export const EventItem = ({ event }) => {
   const formattedAddress = location.replace(', ', '\n');
   return (
     <li className={classes.item}>
-      <img src={`/${image}`} alt={title} />
+      <Image src={`/${image}`} width={250} height={160} alt={title} />
       <div className={classes.content}>
         <div className={classes.summary}>
           <h2>{title}</h2>
