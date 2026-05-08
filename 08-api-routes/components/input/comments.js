@@ -22,7 +22,7 @@ function Comments(props) {
           alert('Something went wrong!');
         });
     }
-  }, [showComments, eventId]);
+  }, [showComments]);
 
   function toggleCommentsHandler() {
     setShowComments((prevStatus) => !prevStatus);
@@ -38,7 +38,7 @@ function Comments(props) {
     })
       .then((response) => response.json())
       .then((data) => {
-        setComments(data.comments);
+        setComments((prevComments) => [...prevComments, commentData]);
       })
       .catch((error) => {
         console.error('Error:', error);
